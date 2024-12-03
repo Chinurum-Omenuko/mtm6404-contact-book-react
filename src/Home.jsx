@@ -37,26 +37,26 @@ export default function App() {
   );
 
   return (
-    <div className="flex flex-col items-center p-6">
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '24px' }}>
 
-     
-      <div className="w-full flex flex-row justify-between items-center mb-4 border-solid border-2 border-red-500">
-        <h1 className="text-3xl font-bold text-gray-800">Contacts</h1>
+
+      <div style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+        <h1 style={{ fontSize: '32px', fontWeight: 'bold', color: 'gray' }}>Contacts</h1>
         <button
-          className="text-blue-600 text-xl font-bold"
+          style={{ fontSize: '20px', fontWeight: 'bold' }}
           onClick={() => navigate('/create')}
         >
           +
         </button>
       </div>
-    
 
 
-      <div className="w-full">
+
+      <div style={{ width: '100%' }}>
         <input
           type="text"
           placeholder="Search"
-          className="w-full border border-gray-300 rounded-md py-2 px-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          style={{ width: '100%', border: '1px solid', borderColor: 'gray', borderRadius: '4px', paddingY: '8px', paddingX: '16px', color: 'gray', outline: 'none' }}
           value={searchTerm}
           onChange={e => setSearchTerm(e.target.value)}
         />

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { doc, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
@@ -72,65 +71,124 @@ const EditContact = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto p-6">
-      <a href="#" className="text-blue-600 text-sm mb-4 block" onClick={() => navigate('/')}>
+    <div style={{ maxWidth: '32rem', margin: '0 auto', padding: '1.5rem' }}>
+      <a href="#" style={{ color: '#2563eb', fontSize: '0.875rem', marginBottom: '1rem', display: 'block' }} onClick={() => navigate('/')}>
         &lt; Contacts
       </a>
 
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">Edit Contact</h1>
+      <h1 style={{ fontSize: '1.875rem', fontWeight: 'bold', color: '#1f2937', marginBottom: '1.5rem' }}>Edit Contact</h1>
 
-      <form className="space-y-4" onSubmit={handleSubmit}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <form style={{ marginBottom: '1rem' }} onSubmit={handleSubmit}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gridGap: '1rem', '@media(min-width: 640px)': { gridTemplateColumns: '1fr 1fr' } }}>
           <input
             type="text"
             placeholder="First Name"
-            className="border border-gray-300 rounded-md py-2 px-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            style={{
+              border: '1px solid #d1d5db',
+              borderRadius: '0.375rem',
+              padding: '0.5rem 1rem',
+              color: '#4b5563',
+              outline: 'none',
+              focus: {
+                outline: 'none',
+                boxShadow: '0 0 0 2px #2563eb',
+              },
+            }}
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
           />
           <input
             type="text"
             placeholder="Last Name"
-            className="border border-gray-300 rounded-md py-2 px-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            style={{
+              border: '1px solid #d1d5db',
+              borderRadius: '0.375rem',
+              padding: '0.5rem 1rem',
+              color: '#4b5563',
+              outline: 'none',
+              focus: {
+                outline: 'none',
+                boxShadow: '0 0 0 2px #2563eb',
+              },
+            }}
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gridGap: '1rem', '@media(min-width: 640px)': { gridTemplateColumns: '1fr 1fr' } }}>
           <input
             type="email"
             placeholder="Email"
-            className="border border-gray-300 rounded-md py-2 px-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            style={{
+              border: '1px solid #d1d5db',
+              borderRadius: '0.375rem',
+              padding: '0.5rem 1rem',
+              color: '#4b5563',
+              outline: 'none',
+              focus: {
+                outline: 'none',
+                boxShadow: '0 0 0 2px #2563eb',
+              },
+            }}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
             type="tel"
             placeholder="Phone Number"
-            className="border border-gray-300 rounded-md py-2 px-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            style={{
+              border: '1px solid #d1d5db',
+              borderRadius: '0.375rem',
+              padding: '0.5rem 1rem',
+              color: '#4b5563',
+              outline: 'none',
+              focus: {
+                outline: 'none',
+                boxShadow: '0 0 0 2px #2563eb',
+              },
+            }}
             value={number}
             onChange={(e) => setNumber(e.target.value)}
           />
         </div>
 
-        <div className="flex items-center space-x-4">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
           <button
             type="submit"
-            className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition"
+            style={{
+              backgroundColor: '#2563eb',
+              color: 'white',
+              padding: '0.5rem 1rem',
+              borderRadius: '0.375rem',
+              transition: 'background-color 0.3s',
+              ':hover': { backgroundColor: '#1d4ed8' },
+            }}
           >
             Update Contact
           </button>
           <button
             type="button"
-            className="bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700 transition"
+            style={{
+              backgroundColor: '#dc2626',
+              color: 'white',
+              padding: '0.5rem 1rem',
+              borderRadius: '0.375rem',
+              transition: 'background-color 0.3s',
+              ':hover': { backgroundColor: '#b91c1c' },
+            }}
             onClick={handleDelete}
           >
             Delete Contact
           </button>
           <button
             type="button"
-            className="text-gray-600 py-2 px-4 rounded-md hover:underline"
+            style={{
+              color: '#4b5563',
+              padding: '0.5rem 1rem',
+              borderRadius: '0.375rem',
+              ':hover': { textDecoration: 'underline' },
+            }}
             onClick={() => navigate('/')}
           >
             Cancel
